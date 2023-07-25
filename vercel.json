@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "client/index.js", "use": "@vercel/static-build", "config": { "distDir": "client/build" } },
+      { "src": "api/Index.js", "use": "@vercel/node" }
+    ]
+  }
+  
