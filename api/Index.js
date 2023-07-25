@@ -10,6 +10,8 @@ const  cookieParser =  require('cookie-parser');
 const multer = require('multer');
 const uploadMiddleware = multer({dest :'uploads/'});
 const fs = require('fs');
+require('dotenv').config();
+
 
 const salt = bcrypt.genSaltSync(10);
 const secret  = 'kjfbejajbgfiuwu392rjdvjsdgwrugvisjdnvlhg9r';   
@@ -18,9 +20,9 @@ const secret  = 'kjfbejajbgfiuwu392rjdvjsdgwrugvisjdnvlhg9r';
 
 const cloudinary = require('cloudinary').v2;
 cloudinary.config({
-  cloud_name: 'difv0hwxh',
-  api_key: '332768892975976',
-  api_secret: 'X67s8IRhRzVSacU0rzC_uO69BSw',
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 
@@ -30,7 +32,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions)); 
-mongoose.connect('mongodb+srv://blogit:XbxGk2uinecT3NUI@blogcluster0.idzmzcj.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.DB_URL)
 app.use(express.json());
 app.use(cookieParser());
 // app.use('/uploads',express.static(__dirname + '/uploads'));
@@ -179,5 +181,5 @@ app.get('/post/:id', async (req,res)=>{
         const  postDoc = await  Post.findById(id).populate('author',['username']);
         res.json(postDoc);
 })
-app.listen(4000);
+app.listen(process.env.PORT);
 //mongodb+srv://blogit:XbxGk2uinecT3NUI@blogcluster0.idzmzcj.mongodb.net/?retryWrites=true&w=majority
