@@ -4,7 +4,7 @@ import Post from "../Post1";
 export default function Indexpage( ) {
     const [posts,setPosts] = useState([]);
     useEffect(() =>{
-        fetch('http://localhost:4000/api/post').then(response =>{
+        fetch('http://localhost:4000/post').then(response =>{
             response.json().then(posts =>{
                 setPosts(posts);
             });

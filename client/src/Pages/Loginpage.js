@@ -49,7 +49,7 @@ export default function Loginpage() {
     const {setUserInfo} = useContext(UserContext);
     async function loign(ev){
         ev.preventDefault();         
-        const response =  await fetch('http://localhost:4000/api/login',{
+        const response =  await fetch('http://localhost:4000/login',{
         method:'POST',
         body:JSON.stringify({username,password}),
         headers:{'Content-Type':'application/json'},
