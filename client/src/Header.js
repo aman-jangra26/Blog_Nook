@@ -5,7 +5,7 @@ import { UserContext } from "./UserContext";
 export default function Header(  ) { 
   const {setUserInfo,userInfo} = useContext(UserContext);
     useEffect(()=>{
-      fetch('http://localhost:4000/profile',{
+      fetch('http://localhost:4000/api/profile',{
         
         credentials: 'include'
       }).then(response =>{
@@ -16,7 +16,7 @@ export default function Header(  ) {
     },[])
 
     function logout() {
-      fetch('http://localhost:4000/logout',{
+      fetch('http://localhost:4000/api/logout',{
         
         credentials: 'include',
         method:'POST',

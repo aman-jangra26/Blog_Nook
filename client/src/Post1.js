@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export default function Post({_id,title,summary,cover,content,createdAt,author}) {
     return(
     <div className="post">
-      <Link to={`/post/${_id}`}>
+      <Link to={`/api/post/${_id}`}>
     <img src ={cover}></img> 
     </Link>
     <div className="text">
-    <Link to={`/post/${_id}`}>
+    <Link to={`/api/post/${_id}`}>
     <h2> {title}</h2>
     </Link>
     <p className="info">

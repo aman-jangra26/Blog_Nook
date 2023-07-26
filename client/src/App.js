@@ -16,11 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
         <Route index element={ <Indexpage/> }/>
-        <Route path="/login"element={ <Loginpage/> }/>
-        <Route path="/register" element={ <Registerpage/> }/>   
-        <Route path="/create" element={<CreatePost/>} />
-        <Route path="/post/:id"element={<PostPage/>}/>
-        <Route path="edit/:id"element ={<EditPost/>}/>
+        <Route path="/api/login"element={ <Loginpage/> }/>
+        <Route path="/api/register" element={ <Registerpage/> }/>   
+        <Route path="/api/create" element={<CreatePost/>} />
+        <Route path="/api/post/:id"element={<PostPage/>}/>
+        <Route path="/api/edit/:id"element ={<EditPost/>}/>
         </Route>
       </Routes>
     </UserContextProvider>
